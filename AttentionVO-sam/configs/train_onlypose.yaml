@@ -1,0 +1,31 @@
+valid_ratio: 0.2
+# hyper parameters (to log)
+hparams: 
+  # Sub-component shoul't be dict or it can't log into tensorboard
+  # epoch: 8
+  iteration: 100000
+  batch_size:  100 #8
+  num_workers: null # None imply auto
+  lr: 1e-4
+  lambda: 0.1 # loss' lambda
+  # optimizer: "SGD"
+  optimizer: "Adam"
+  
+# Metrics to log
+# key should be the same as evo's definition
+metrics:
+  - "rmse"
+  - "mean"
+  - "std"
+  - "min"
+  - "max"
+ckpnt_metric: "rmse"
+metric_type: "RPE"
+
+#
+train: False
+seed: 42
+log_name: postnet_100000iter_Adam  #postnet_25_fulldataset_Adam
+model:
+  name:   postnet_100000iter_Adam #
+  Attention: False

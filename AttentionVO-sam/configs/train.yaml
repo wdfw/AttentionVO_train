@@ -1,0 +1,31 @@
+valid_ratio: 0.2
+renew_iteration: 5
+vail_iteration: 2000
+# hyper parameters (to log)
+hparams: 
+  # Sub-component shoul't be dict or it can't log into tensorboard
+  batch_size: 32
+  num_workers: null # None imply auto
+  lr: 1e-4
+  lambda: 0.1 # loss' lambda
+  # optimizer: "SGD"
+  optimizer: "Adam"
+  iteration: 100000
+# Metrics to log
+# key should be the same as evo's definition
+metrics:
+  - "rmse"
+  - "mean"
+  - "std"
+  - "min"
+  - "max"
+ckpnt_metric: "rmse"
+metric_type: "RPE"
+
+#
+train: False
+seed: 42
+log_name: test 
+model:
+  name: tartanvo_pose_only   
+  Attention: False
